@@ -63,8 +63,8 @@ export default function Page({ params }) {
         click on 👆 images👇 to get next page... 
       </p>
 
-      <div>
-      <AdsterraAd />
+      <div style={{ width: '468px', height: '60px', backgroundColor: '#e0e0e0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      Adsterra Ad Placeholder
     </div>
 
   </div>
