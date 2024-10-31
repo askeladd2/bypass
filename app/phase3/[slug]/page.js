@@ -2,14 +2,26 @@
 import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import Link from "next/link";
+import { useState } from 'react';
+import { Poster1 } from '@/utils/posterads';
+import { Poster3 } from '@/utils/posterads';
 import { generateSlug } from '@/utils/slug';
 import understandingPeople from '@/public/oneee.jpg'; 
 import psychologyImage from '@/public/neuralink.jpg'; 
 
 export default function Page({ params }) { 
+  const [nextpage, setnextpage]=useState(false)
   const slug4 = generateSlug("tbdfinal");
-  const slug3 = generateSlug("phase3"); 
+  const linkUrl = `/temp/${slug4}` ;
 
+  const slug3 = generateSlug("phase3"); 
+  console.log(`Slug for pahse3: ${slug3}`);
+  console.log("hello");
+
+
+  setInterval(() => {
+    setnextpage(!nextpage);
+}, 10000);
   if (params.slug === slug3){
   return (
     <>
@@ -44,7 +56,11 @@ export default function Page({ params }) {
             their perspectives and feelings, leading to stronger bonds and improved communication.
           </p>
           <h2 className="text-2xl font-semibold my-4">The parenting affect </h2>
-          
+          <Poster1/>
+      <p className='bg-red-600 px-4 py-2 text-white rounded-md"'>
+        click on 👆 images👇 to get next page... 
+      </p>
+    <Poster3/>
           <p>
           Analyzing the impact of parenting on individual characteristics reveals a complex interplay between familial influence and societal norms, particularly in the context of today's showoff culture. Parenting styles significantly shape a child's personality traits, self-esteem, and social behaviors, often molding their capacity for empathy, resilience, and ambition. In a society increasingly defined by the need to display success and affluence, children raised in environments that prioritize external validation may develop a heightened desire for recognition, often valuing appearances over authenticity. This phenomenon can be attributed to parental pressure to achieve and showcase accomplishments, fostering a mindset that equates worth with public approval. As children observe their parents navigating social interactions and valuing material possessions or social status, they may internalize these values, leading to a culture of competition and superficiality. Consequently, the quest for social acceptance can overshadow deeper values, such as kindness and genuine connection, as individuals strive to curate an idealized version of themselves for public consumption. The result is a society where the emphasis on showmanship can lead to emotional disconnection and a lack of fulfillment, ultimately raising questions about the long-term implications of parenting approaches that align with these societal trends. Thus, understanding the relationship between parenting practices and societal expectations is crucial for fostering environments that prioritize emotional well-being and authentic connections over mere appearances.
           </p>
@@ -127,6 +143,16 @@ export default function Page({ params }) {
           /* Tailwind CSS classes will handle the responsive design */
         `}</style>
         <section>
+        <div className="m-auto">
+    {nextpage ? (
+      <Link
+        className="bg-red-600 px-4 py-2 text-white rounded-md"
+        href={linkUrl}
+      >
+        Continue
+      </Link>
+    ) : null }
+  </div>
         <h2>Conclusion: Ethical Exploration and Future Implications</h2>
         <p>
           The journey toward a metal orgasm via Neuralink marks a profound step in

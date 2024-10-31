@@ -1,14 +1,16 @@
 "use client"; 
+import {  useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
 import { generateSlug } from '@/utils/slug';
+import { Poster1 } from '@/utils/posterads';
+import { Poster2 } from '@/utils/posterads';
 import Image from 'next/image';
 import makima from  "@/public/makima.jpg";
 import askeladd from  "@/public/Askeladd.jpg";
 import makima2 from  "@/public/mmmakim.jpg";
-import {  useState } from 'react';
-import { useEffect } from 'react';
-import AdsterraAd from '../../../components/AdsterraAd';
+import AdsterraAd from '@/components/AdsterraAd';
+
 export default function Page({ params }) {
     const [nextpage, setnextpage] =useState(false);
     const [clickCount, setClickCount] = useState(0);
@@ -20,11 +22,12 @@ export default function Page({ params }) {
       setClickCount((prevCount) => prevCount + 1);
     };
     // const linkUrl = clickCount === 0 ? `/intervals/${slug2}` : '/ads';
-    const linkUrl = clickCount === 0 ? '/ads' : `/intervals/${slug2}` ;
+  const adpage ="https://www.profitablecpmrate.com/xzzdaxbw?key=23bb7e04da8367a3798df8a3bf09e239";
+    const linkUrl = clickCount === 0 ? adpage : `/intervals/${slug2}` ;
     // useEffect(() => {
       setInterval(() => {
           setnextpage(!nextpage);
-      }, 5000);
+      }, 16000);
 
       // Cleanup interval on component unmount
   //     return () => clearInterval(interval);
@@ -55,18 +58,12 @@ export default function Page({ params }) {
       <div className=" mb-3  flex items-center justify-center">
   <div className="m-auto">
   
-    <div>
-      <AdsterraAd />
-    </div>
-
+      <Poster1/>
       <p className ='bg-red-600 px-4 py-2 text-white rounded-md"'>
         click on 👆 images👇 to get next page... 
       </p>
-
-      <div style={{ width: '468px', height: '60px', backgroundColor: '#e0e0e0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      Adsterra Ad Placeholder
-    </div>
-
+      <Poster2/>
+    
   </div>
 </div>
 

@@ -1,7 +1,9 @@
 "use client";
 import Image from "next/image";
 import { generateSlug } from '@/utils/slug';
-import ichigoZanpakutoCover from "@/public/mask.png";
+import { Poster3 } from '@/utils/posterads';
+import { Poster4 } from '@/utils/posterads';
+// import ichigoZanpakutoCover from "@/public/mask.png";
 import ichigoZanpakuto from "@/public/ichigo.jpg";
 import ichigoZanpakuto2 from "@/public/zangetsu.png";
 import Navbar from '@/components/Navbar';
@@ -16,11 +18,12 @@ const handleClick = () => {
       setClickCount((prevCount) => prevCount + 1);  
     };
     // const linkUrl = clickCount === 0 ? `/intervals/${slug2}` : '/ads';
-    const linkUrl = clickCount === 0 ? '/ads' : `/phase3/${slug3}` ;
-    // useEffect(() => {
+    const adpage ="https://www.profitablecpmrate.com/xzzdaxbw?key=23bb7e04da8367a3798df8a3bf09e239";
+    const linkUrl = clickCount === 0 ? adpage : `/phase3/${slug3}` ;    // useEffect(() => {
       setInterval(() => {
           setnextpage(!nextpage);
-      }, 5000);
+      }, 14000);
+      console.log(slug3)
      if( params.slug === slug2)
       {   
         return (
@@ -83,11 +86,12 @@ const handleClick = () => {
     </p>
     <div className=" mb-3  flex items-center justify-center">
   <div className="m-auto">
-    
+          
+    <Poster3/>
       <p className='bg-red-600 px-4 py-2 text-white rounded-md"'>
         click on 👆 images👇 to get next page... 
       </p>
-
+    <Poster4/>
   </div>
 </div>
 
